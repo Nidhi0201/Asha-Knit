@@ -8,13 +8,13 @@ window.addEventListener('scroll', () => nav?.classList.toggle('scrolled', scroll
 
 /* ── Hamburger ── */
 const hamburger = document.querySelector('.hamburger');
-const navCenter = document.querySelector('.nav-center');
+const navEl = document.querySelector('nav');
 hamburger?.addEventListener('click', () => {
-  navCenter?.classList.toggle('open');
+  navEl?.classList.toggle('menu-open');
   hamburger.classList.toggle('open');
 });
-navCenter?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  navCenter.classList.remove('open');
+document.querySelectorAll('.nav-center a').forEach(a => a.addEventListener('click', () => {
+  navEl?.classList.remove('menu-open');
   hamburger?.classList.remove('open');
 }));
 
